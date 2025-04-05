@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,21 +35,9 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --primary-gradient: linear-gradient(90deg, #2A2A72 0%, #009FFD 50%, #2A2A72 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
   }
 
   .dark {
@@ -79,14 +68,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -97,5 +78,42 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
+}
+
+@layer components {
+  .glass {
+    @apply bg-glass backdrop-blur-lg border border-white/20 rounded-2xl;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-card to-secondary/80 backdrop-blur-sm;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-primary;
+  }
+  
+  .hover-scale {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 159, 253, 0.5);
+  border-radius: 20px;
 }
