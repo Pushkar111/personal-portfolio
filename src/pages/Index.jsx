@@ -7,6 +7,8 @@ import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SocialSidebar from '../components/SocialSidebar';
+import CursorAnimation from '../components/CursorAnimation';
+import ChatSupport from '../components/ChatSupport';
 
 const Index = () => {
   useEffect(() => {
@@ -14,14 +16,19 @@ const Index = () => {
     document.body.style.backgroundColor = '#121212';
     document.body.style.color = '#ffffff';
     
+    // Add smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
     return () => {
       document.body.style.backgroundColor = '';
       document.body.style.color = '';
+      document.documentElement.style.scrollBehavior = '';
     };
   }, []);
 
   return (
     <div className="min-h-screen bg-dark text-white overflow-hidden">
+      <CursorAnimation />
       <Navbar />
       <SocialSidebar />
       <Hero />
@@ -29,6 +36,7 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
+      <ChatSupport />
     </div>
   );
 };

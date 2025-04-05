@@ -85,6 +85,11 @@
   }
 }
 
+/* Cursor effects */
+.cursor-dot {
+  mix-blend-mode: difference;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

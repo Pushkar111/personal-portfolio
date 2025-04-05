@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -61,55 +61,79 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen(true)}
             className="text-white"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <Menu size={24} />
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden bg-dark/95 backdrop-blur-lg"
-        >
-          <div className="container mx-auto px-4 py-6 flex flex-col space-y-6">
-            <a
-              href="#home"
-              className="text-white hover:text-blue-400 transition-colors py-2"
+      {/* Mobile Menu - Offcanvas */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 md:hidden"
               onClick={() => setMobileMenuOpen(false)}
+            />
+            
+            {/* Sidebar */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25 }}
+              className="fixed top-0 right-0 h-full w-[70%] max-w-sm bg-dark border-l border-gray-800 z-50 md:hidden"
             >
-              Home
-            </a>
-            <a
-              href="#projects"
-              className="text-white hover:text-blue-400 transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Projects
-            </a>
-            <a
-              href="#testimonials"
-              className="text-white hover:text-blue-400 transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Testimonials
-            </a>
-            <a
-              href="#contact"
-              className="text-white hover:text-blue-400 transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </a>
-          </div>
-        </motion.div>
-      )}
+              <div className="p-5 flex justify-end">
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-white p-2 rounded-full hover:bg-gray-800"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <div className="px-6 py-8 flex flex-col space-y-8">
+                <a
+                  href="#home"
+                  className="text-2xl font-medium text-white hover:text-blue-400 transition-colors py-2 border-b border-gray-800"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </a>
+                <a
+                  href="#projects"
+                  className="text-2xl font-medium text-white hover:text-blue-400 transition-colors py-2 border-b border-gray-800"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Projects
+                </a>
+                <a
+                  href="#testimonials"
+                  className="text-2xl font-medium text-white hover:text-blue-400 transition-colors py-2 border-b border-gray-800"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Testimonials
+                </a>
+                <a
+                  href="#contact"
+                  className="text-2xl font-medium text-white hover:text-blue-400 transition-colors py-2 border-b border-gray-800"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </a>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

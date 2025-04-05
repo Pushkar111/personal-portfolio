@@ -1,8 +1,20 @@
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import AboutModal from './AboutModal';
 
 const Hero = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const scrollToProjects = (e) => {
+    e.preventDefault();
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-dark px-4 md:px-10 lg:px-20">
       {/* Background particles and shapes - simplified version */}
@@ -50,13 +62,13 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-10"
           >
-            <a 
-              href="#projects" 
+            <button 
+              onClick={() => setModalOpen(true)}
               className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded flex items-center transition-all duration-300 group"
             >
               About Me 
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
+            </button>
           </motion.div>
           
           <motion.div
@@ -65,7 +77,11 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             className="absolute bottom-10 left-1/2 -translate-x-1/2"
           >
-            <a href="#projects" className="flex flex-col items-center text-gray-400 hover:text-white transition-colors">
+            <a 
+              href="#projects" 
+              onClick={scrollToProjects}
+              className="flex flex-col items-center text-gray-400 hover:text-white transition-colors"
+            >
               <span className="text-sm mb-2">Latest Works</span>
               <div className="w-10 h-10 flex items-center justify-center">
                 <motion.div
@@ -100,6 +116,8 @@ const Hero = () => {
           </defs>
         </svg>
       </div>
+
+      <AboutModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
