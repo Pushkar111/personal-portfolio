@@ -12,6 +12,9 @@ import ChatSupport from '../components/ChatSupport';
 
 const Index = () => {
   useEffect(() => {
+    // Update document title
+    document.title = 'Pushkar | Portfolio';
+    
     // Set background color on body for the entire site
     document.body.style.backgroundColor = '#121212';
     document.body.style.color = '#ffffff';
@@ -23,6 +26,7 @@ const Index = () => {
       document.body.style.backgroundColor = '';
       document.body.style.color = '';
       document.documentElement.style.scrollBehavior = '';
+      document.title = 'Portfolio';
     };
   }, []);
 

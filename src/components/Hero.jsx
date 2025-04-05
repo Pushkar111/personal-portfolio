@@ -44,7 +44,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="text-5xl md:text-7xl font-bold mb-4 text-white"
           >
-            Anurag Singh
+            Pushkar
           </motion.h1>
           
           <motion.p
@@ -100,21 +100,24 @@ const Hero = () => {
 
       {/* Large logo in the center-right */}
       <div className="absolute right-0 md:right-10 top-1/2 -translate-y-1/2 opacity-80 z-0 transform scale-75 md:scale-100">
-        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path 
-            d="M200 50L50 350 350 350z M200 350L350 50 50 50z" 
-            stroke="url(#logo-gradient)" 
-            strokeWidth="10"
-            fill="none"
-          />
-          <defs>
-            <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#2A2A72" />
-              <stop offset="50%" stopColor="#009FFD" />
-              <stop offset="100%" stopColor="#2A2A72" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <div className="flex items-center">
+          <svg width="200" height="200" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M100 50 H200 C250 50 300 100 300 150 C300 200 250 250 200 250 H100 V50" 
+              stroke="url(#logo-gradient)" 
+              strokeWidth="15"
+              fill="none"
+            />
+            <defs>
+              <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2A2A72" />
+                <stop offset="50%" stopColor="#009FFD" />
+                <stop offset="100%" stopColor="#2A2A72" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span className="text-6xl font-bold bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent opacity-20">Pushkar</span>
+        </div>
       </div>
 
       <AboutModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />

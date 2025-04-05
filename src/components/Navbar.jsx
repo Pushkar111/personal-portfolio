@@ -32,10 +32,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-white">
-          <svg width="40" height="40" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <a href="#home" className="text-2xl font-bold text-white flex items-center">
+          <svg width="40" height="40" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
             <path 
-              d="M200 50L50 350 350 350z M200 350L350 50 50 50z" 
+              d="M100 50 H200 C250 50 300 100 300 150 C300 200 250 250 200 250 H100 V50" 
               stroke="url(#nav-logo-gradient)" 
               strokeWidth="20"
               fill="none"
@@ -48,6 +48,7 @@ const Navbar = () => {
               </linearGradient>
             </defs>
           </svg>
+          <span className="bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent">Pushkar</span>
         </a>
 
         {/* Desktop Menu */}
