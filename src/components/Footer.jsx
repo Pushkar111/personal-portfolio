@@ -6,23 +6,27 @@ const Footer = () => {
     <footer className="py-10 bg-black border-t border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
+          
           <div className="mb-6">
-            <svg width="60" height="60" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path 
-                d="M100 50 H200 C250 50 300 100 300 150 C300 200 250 250 200 250 H100 V50" 
-                stroke="url(#footer-logo-gradient)" 
-                strokeWidth="20"
-                fill="none"
-              />
-              <defs>
-                <linearGradient id="footer-logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2A2A72" />
-                  <stop offset="50%" stopColor="#009FFD" />
-                  <stop offset="100%" stopColor="#2A2A72" />
-                </linearGradient>
-              </defs>
-            </svg>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent">Pushkar</span>
+            {/* logo */}
+            <svg width="60" height="60" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
+                <motion.path 
+                  d="M200 50L50 350 350 350z M200 350L350 50 50 50z" 
+                  stroke="url(#nav-logo-gradient)" 
+                  strokeWidth="20"
+                  fill="none"
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                />
+                <defs>
+                  <linearGradient id="nav-logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3182CE" />
+                    <stop offset="50%" stopColor="#4299E1" />
+                    <stop offset="100%" stopColor="#2B6CB0" />
+                  </linearGradient>
+                </defs>
+              </svg>
           </div>
           
           <div className="flex gap-6 mb-8">
@@ -59,7 +63,7 @@ const Footer = () => {
           </div>
           
           <p className="text-gray-500 text-sm">
-            Anurag Singh © {new Date().getFullYear()}
+            Pushkar Modi © {new Date().getFullYear()}
           </p>
         </div>
       </div>
