@@ -58,6 +58,17 @@ export default {
           light: '#009FFD',
           dark: '#2A2A72',
         },
+        rotate: {
+          0: '0deg',
+          90: '90deg',
+          180: '180deg',
+          270: '270deg',
+          360: '360deg',
+        }, 
+        scale:{
+          200: '2',
+          250: '2.5',
+        }
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -85,6 +96,11 @@ export default {
           '0%': { transform: 'scale(0.95)', opacity: '0' },
           '100%': { transform: 'scale(1)', opacity: '1' }
         },
+        tooltipPulse: {
+          '0%': { boxShadow: '0 0 0 0 rgba(var(--tw-shadow-color), 0.7)' },
+          '70%': { boxShadow: '0 0 0 10px rgba(var(--tw-shadow-color), 0)' },
+          '100%': { boxShadow: '0 0 0 0 rgba(var(--tw-shadow-color), 0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -92,6 +108,8 @@ export default {
         'fade-in': 'fade-in 0.3s ease-out',
         'fade-out': 'fade-out 0.3s ease-out',
         'scale-in': 'scale-in 0.2s ease-out',
+        'bounce-slow': 'bounce 3s infinite',
+        tooltipPulse: 'tooltipPulse 2s infinite',
       },
     }
   },

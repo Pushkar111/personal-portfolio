@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
@@ -8,7 +7,6 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import SocialSidebar from '../components/SocialSidebar';
 import CursorAnimation from '../components/CursorAnimation';
-import ChatSupport from '../components/ChatSupport';
 
 const Index = () => {
   useEffect(() => {
@@ -27,7 +25,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark text-white overflow-hidden">
+    <div className="min-h-screen bg-dark text-white">
       <CursorAnimation />
       <Navbar />
       <SocialSidebar />
@@ -36,7 +34,6 @@ const Index = () => {
       <Testimonials />
       <Contact />
       <Footer />
-      <ChatSupport />
     </div>
   );
 };

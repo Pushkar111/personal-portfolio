@@ -11,7 +11,7 @@ const SocialSidebar = () => {
     >
       <div className="flex flex-col gap-6">
         <a 
-          href="https://linkedin.com/" 
+          href="https://linkedin.com/in/pushkarmodi111" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-blue-500 transition-all duration-300 hover:-translate-y-1"
@@ -23,7 +23,7 @@ const SocialSidebar = () => {
           </svg>
         </a>
         <a 
-          href="https://twitter.com/" 
+          href="https://x.com/pushkarmodi111" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-blue-400 transition-all duration-300 hover:-translate-y-1"
@@ -33,7 +33,7 @@ const SocialSidebar = () => {
           </svg>
         </a>
         <a 
-          href="https://instagram.com/" 
+          href="https://www.instagram.com/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-pink-500 transition-all duration-300 hover:-translate-y-1"
@@ -45,7 +45,7 @@ const SocialSidebar = () => {
           </svg>
         </a>
         <a 
-          href="mailto:contact@example.com"
+          href="mailto:pushkarmodi111@gmail.com"
           className="text-gray-400 hover:text-red-500 transition-all duration-300 hover:-translate-y-1"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -54,7 +54,7 @@ const SocialSidebar = () => {
           </svg>
         </a>
         <a 
-          href="https://github.com/" 
+          href="https://github.com/Pushkar111" 
           target="_blank" 
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-white transition-all duration-300 hover:-translate-y-1"
