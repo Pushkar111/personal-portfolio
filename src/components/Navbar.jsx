@@ -175,60 +175,32 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      {/* Main Navbar - Using an absolutely positioned wrapper to avoid scroll issues */}
-      <motion.nav
-        ref={navbarRef}
-        initial="hidden"
-        animate="visible"
-        variants={navbarVariants}
-        className={`fixed w-full z-40 transition-all duration-300 ${
-          scrolled 
-            ? 'py-3 bg-gray-900/90 backdrop-blur-md shadow-xl border-b border-gray-800/50' 
-            : 'py-5 bg-transparent'
-        }`}
-      >
-        <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-          {/* Logo Section */}
-          <motion.div
-            onClick={(e) => handleNavigation(e, 'home')}
-            className="relative group flex items-center cursor-pointer"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            <motion.div
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-              <svg width="40" height="40" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-2">
-                <motion.path 
-                  d="M200 50L50 350 350 350z M200 350L350 50 50 50z" 
-                  stroke="url(#nav-logo-gradient)" 
-                  strokeWidth="20"
-                  fill="none"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.5, ease: "easeInOut" }}
-                />
-                <defs>
-                  <linearGradient id="nav-logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3182CE" />
-                    <stop offset="50%" stopColor="#4299E1" />
-                    <stop offset="100%" stopColor="#2B6CB0" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </motion.div>
-            {/* <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-              Pushkar
-            </span> */}
-            <motion.span 
-              className="absolute -bottom-0.5 left-0 h-0.5 bg-blue-500"
-              initial={{ width: 0 }}
-              whileHover={{ width: '100%' }}
-              transition={{ duration: 0.3 }}
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed w-full z-50 px-4 sm:px-6 py-4 transition-all duration-300 ${
+        scrolled ? 'bg-dark/80 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      }`}
+    >
+      <div className="container mx-auto flex justify-between items-center">
+        <a href="#home" className="text-2xl font-bold text-white">
+          <svg width="40" height="40" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M200 50L50 350 350 350z M200 350L350 50 50 50z" 
+              stroke="url(#nav-logo-gradient)" 
+              strokeWidth="20"
+              fill="none"
             />
-          </motion.div>
+            <defs>
+              <linearGradient id="nav-logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#2A2A72" />
+                <stop offset="50%" stopColor="#009FFD" />
+                <stop offset="100%" stopColor="#2A2A72" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">

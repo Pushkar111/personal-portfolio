@@ -7,10 +7,9 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
           <div className="mb-6">
-            {/* logo */}
             <svg width="60" height="60" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path 
-                d="M200 50L50 350 350 350z M200 350L350 50 50 50z" 
+                d="M100 50 H200 C250 50 300 100 300 150 C300 200 250 250 200 250 H100 V50" 
                 stroke="url(#footer-logo-gradient)" 
                 strokeWidth="20"
                 fill="none"
@@ -23,6 +22,7 @@ const Footer = () => {
                 </linearGradient>
               </defs>
             </svg>
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-blue-800 bg-clip-text text-transparent">Pushkar</span>
           </div>
           
           <div className="flex gap-6 mb-8">
@@ -59,7 +59,7 @@ const Footer = () => {
           </div>
           
           <p className="text-gray-500 text-sm">
-            Pushkar Modi © {new Date().getFullYear()}
+            Anurag Singh © {new Date().getFullYear()}
           </p>
         </div>
       </div>
