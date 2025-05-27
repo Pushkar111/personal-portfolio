@@ -160,10 +160,9 @@ const Projects = () => {
     const [projects] = useState([
         {
             title: "Geeta Sangam",
-            subtitle: "(Discover the World)",
-            description:
-                "REST API World is a sleek and interactive platform to explore and test RESTful APIs built with React. Designed and developed from scratch to help developers understand and interact with APIs efficiently.",
-            technologies: ["react.js", "restapi", "javascript", "axios", "html", "css", "figma"],
+            subtitle: "(Spiritual & Religious Platform)",
+            description: "A modern spiritual web platform inspired by the teachings of the Bhagavad Gita. It features the GeetaGPT Chatbot, stories, facts, quizzes, and astrology — all within a responsive, user-friendly interface. Includes secure authentication and authorization.",
+            technologies: ["react.js",  "javascript", "axios", "html", "tailwindcss", "django", "django-rest-framework", "firebase"],
             image: "assets/geeta-sangam-mockup.png",
             live: "https://geeta-sangam.netlify.app/",
             github: "https://github.com/",
